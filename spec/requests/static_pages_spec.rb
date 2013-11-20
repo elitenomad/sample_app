@@ -9,7 +9,12 @@ describe "Static Pages" do
 
     it "should have title 'Home'" do
     	visit '/static_pages/home'
-    	page.should have_title('Home')
+    	page.should have_title('Ruby on Rails Tutorial App')
+    end
+
+     it "should not have a custom page title" do
+      visit '/static_pages/home'
+      expect(page).not_to have_title('| Home')
     end
   end
 
@@ -21,7 +26,7 @@ describe "Static Pages" do
 
     it "should have title right" do
     	visit '/static_pages/help'
-    	page.should have_title('Help')
+    	page.should have_title('Ruby on Rails Tutorial App | Help')
     end
   end
 
@@ -33,7 +38,7 @@ describe "Static Pages" do
 
     it "should have title 'About US'" do
     	visit '/static_pages/about'
-    	page.should have_title("About US")
+    	page.should have_title("Ruby on Rails Tutorial App | About US")
     end
   end
 
@@ -45,7 +50,7 @@ describe "Static Pages" do
 
     it "should have title 'Contact US'" do
     	visit '/static_pages/contact'
-    	page.should have_title("Contact US")
+    	page.should have_title("Ruby on Rails Tutorial App | Contact US")
     end
   end
 end
